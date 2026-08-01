@@ -20,17 +20,60 @@
     color: #7d5411; font-family: 'Nunito', sans-serif; font-size: 13px;
     text-align: center; padding: 12px; box-sizing: border-box;
   }
+
+  /* ---- Responsive overrides (tablet / laptop) ---- */
+  @media (max-width: 980px) {
+    section, header, footer { padding-left: 28px !important; padding-right: 28px !important; }
+    .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    #flavor-picker { grid-template-columns: repeat(4, 1fr) !important; gap: 12px !important; }
+    .h1-hero { font-size: 56px !important; }
+    .h2-52 { font-size: 40px !important; }
+    .h2-50 { font-size: 36px !important; }
+    .h2-46 { font-size: 34px !important; }
+  }
+
+  /* ---- Responsive overrides (mobile) ---- */
+  @media (max-width: 640px) {
+    section, header, footer { padding-left: 20px !important; padding-right: 20px !important; }
+    section { padding-top: 44px !important; padding-bottom: 44px !important; }
+
+    .site-header { flex-wrap: wrap; row-gap: 10px; }
+    .site-nav { flex-wrap: wrap; justify-content: center; width: 100%; gap: 14px 18px !important; }
+
+    .two-col { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .section-head-row { flex-direction: column; align-items: flex-start !important; }
+
+    .grid-3 { grid-template-columns: 1fr !important; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    #flavor-picker { grid-template-columns: repeat(2, 1fr) !important; }
+    .addons-grid { grid-template-columns: 1fr !important; }
+    .bio-columns { columns: 1 !important; }
+    .location-grid { grid-template-columns: 1fr !important; }
+
+    .order-box { min-width: 0 !important; width: 100%; padding: 26px 20px !important; }
+
+    .h1-hero { font-size: 38px !important; }
+    .h2-52 { font-size: 30px !important; }
+    .h2-50 { font-size: 28px !important; }
+    .h2-46 { font-size: 26px !important; }
+
+    .hero-badge {
+      position: static !important; left: auto !important; bottom: auto !important;
+      margin-top: 16px !important; display: inline-block;
+    }
+  }
 </style>
 </head>
 <body>
 
   <div style="--color-accent: #e14b3d; --color-accent-600: #c93f31; --color-accent-700: #a52e22; --color-text: #1d3557; --font-heading: 'Fredoka', sans-serif; --font-heading-weight: 600; --font-body: 'Nunito', sans-serif; background: #fffaf0; color: var(--color-text); font-family: var(--font-body); overflow-x: hidden;">
 
-    <header style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 40px; background: rgba(243,242,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
+    <header class="site-header" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 40px; background: rgba(243,242,242,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="assets/logo.png" alt="Nenecitas Sorbetes" style="height: 46px; width: auto; display: block;">
       </div>
-      <nav style="display: flex; align-items: center; gap: 26px; font-size: 13px; letter-spacing: 0.04em;">
+      <nav class="site-nav" style="display: flex; align-items: center; gap: 26px; font-size: 13px; letter-spacing: 0.04em;">
         <a href="#flavors" style="color: var(--color-text);">Flavors</a>
         <a href="#picker" style="color: var(--color-text);">Build a cone</a>
         <a href="#catering" style="color: var(--color-text);">Parties</a>
@@ -39,13 +82,13 @@
       </nav>
     </header>
 
-    <section style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; padding: 76px 40px 64px; max-width: 1240px; margin: 0 auto;">
+    <section class="two-col" style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; padding: 76px 40px 64px; max-width: 1240px; margin: 0 auto;">
       <div>
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 22px;">
           <span style="width: 44px; height: 1px; background: var(--color-accent);"></span>
           <span style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); font-variant-numeric: tabular-nums;">The Filipino Ice Cream · Since 2015</span>
         </div>
-        <h1 style="font-family: var(--font-heading); font-weight: 600; font-size: 74px; line-height: 1.04; margin: 0 0 26px; letter-spacing: -0.01em;">Four scoops,<br>two flavors,<br><span style="color: var(--color-accent-700);">seventy pesos.</span></h1>
+        <h1 class="h1-hero" style="font-family: var(--font-heading); font-weight: 600; font-size: 74px; line-height: 1.04; margin: 0 0 26px; letter-spacing: -0.01em;">Four scoops,<br>two flavors,<br><span style="color: var(--color-accent-700);">seventy pesos.</span></h1>
         <p style="font-size: 18px; line-height: 1.68; max-width: 46ch; margin: 0 0 34px; color: var(--color-neutral-800); text-wrap: pretty;">Homemade sorbetes churned the old way — fresh fruit, real coconut, no shortcuts. Pick any two flavors on one cone or cup. Same price, every flavor, every day.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px;">
           <a href="#picker" class="btn btn-primary">Build your combo</a>
@@ -90,7 +133,7 @@
             </svg>
           </div>
         </div>
-        <div style="position: absolute; left: -26px; bottom: 44px; background: var(--color-bg); border: 1px solid var(--color-accent); padding: 14px 20px; box-shadow: var(--shadow-sm);">
+        <div class="hero-badge" style="position: absolute; left: -26px; bottom: 44px; background: var(--color-bg); border: 1px solid var(--color-accent); padding: 14px 20px; box-shadow: var(--shadow-sm);">
           <div style="font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent-700);">Best seller</div>
           <div style="font-family: var(--font-heading); font-size: 22px; margin-top: 4px;">Mango · Avocado · Durian</div>
         </div>
@@ -99,15 +142,15 @@
 
     <section id="flavors" style="padding: 72px 40px 80px; border-top: 1px solid var(--color-divider);">
       <div style="max-width: 1240px; margin: 0 auto;">
-        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 44px;">
+        <div class="section-head-row" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 44px;">
           <div>
             <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">The flavors</div>
-            <h2 style="font-family: var(--font-heading); font-weight: 400; font-size: 52px; line-height: 1.06; margin: 0;">Three we are known for.<br>Four we never run out of.</h2>
+            <h2 class="h2-52" style="font-family: var(--font-heading); font-weight: 400; font-size: 52px; line-height: 1.06; margin: 0;">Three we are known for.<br>Four we never run out of.</h2>
           </div>
           <p style="font-size: 15px; line-height: 1.7; max-width: 34ch; margin: 0 0 8px; color: var(--color-neutral-700); text-align: justify;">Every batch is churned with fresh fruit and coconut cream. Choose any two on the same cone — the pairing is yours, the price never changes.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 26px;">
+        <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 26px;">
           <div class="card" style="padding: 0; overflow: hidden; border-top: 3px solid #e0a12a;">
             <div style="position: relative; width: 100%; aspect-ratio: 5 / 4;"><img src="assets/mango.jpg" alt="Mango sorbetes" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
             <div style="padding: 22px 24px 26px;">
@@ -143,7 +186,7 @@
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;">
+        <div class="grid-4" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px;">
           <div class="card" style="padding: 24px; border-top: 3px solid #c95d72;">
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
               <span style="width: 11px; height: 11px; border-radius: 50%; background: #c95d72;"></span>
@@ -183,12 +226,12 @@
     <section id="picker" style="padding: 76px 40px 84px; border-top: 1px solid var(--color-divider); background: #e8f6fb;">
       <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
         <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">Build your cone</div>
-        <h2 style="font-family: var(--font-heading); font-weight: 400; font-size: 52px; line-height: 1.08; margin: 0 0 14px;">Pick two. That is the whole rule.</h2>
+        <h2 class="h2-52" style="font-family: var(--font-heading); font-weight: 400; font-size: 52px; line-height: 1.08; margin: 0 0 14px;">Pick two. That is the whole rule.</h2>
         <p style="font-size: 16px; line-height: 1.7; margin: 0 auto 44px; max-width: 52ch; color: var(--color-neutral-800);">Four scoops, two flavors, one cone or cup — ₱70 no matter which two you choose. Tap your pair and show it to us at the stall.</p>
 
         <div id="flavor-picker" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px;"></div>
 
-        <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 18px; border: 1px solid var(--color-divider); background: var(--color-bg); padding: 34px 56px; min-width: 420px;">
+        <div class="order-box" style="display: inline-flex; flex-direction: column; align-items: center; gap: 18px; border: 1px solid var(--color-divider); background: var(--color-bg); padding: 34px 56px; min-width: 420px;">
           <div style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-neutral-700);">Your order</div>
           <div id="combo-label" style="font-family: var(--font-heading); font-size: 34px; line-height: 1.2; color: var(--color-text);">Pick your first flavor</div>
           <div style="display: flex; align-items: center; gap: 14px;">
@@ -202,14 +245,14 @@
     </section>
 
     <section id="story" style="padding: 84px 40px; border-top: 1px solid var(--color-divider);">
-      <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center;">
+      <div class="two-col" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center;">
         <div class="plate" style="padding: 12px;">
           <div style="position: relative; width: 100%; aspect-ratio: 1 / 1;"><img src="assets/story.jpg" alt="Nenecitas Sorbetes" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
         </div>
         <div>
           <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 16px;">Our story</div>
-          <h2 style="font-family: var(--font-heading); font-weight: 400; font-size: 50px; line-height: 1.08; margin: 0 0 26px;">A recipe rediscovered in Bohol.</h2>
-          <div style="columns: 2; column-gap: 40px; font-size: 15px; line-height: 1.78; text-align: justify; color: var(--color-neutral-800);">
+          <h2 class="h2-50" style="font-family: var(--font-heading); font-weight: 400; font-size: 50px; line-height: 1.08; margin: 0 0 26px;">A recipe rediscovered in Bohol.</h2>
+          <div class="bio-columns" style="columns: 2; column-gap: 40px; font-size: 15px; line-height: 1.78; text-align: justify; color: var(--color-neutral-800);">
             <p style="margin: 0 0 16px;">Our story starts in 2015, when our mother, Nenecitas, went home to Bohol for a fiesta and tasted an old family ice cream recipe. She came back to Alae, Manolo Fortich unable to forget it — and called on her Tito to teach the family how it was done the traditional way, by hand.</p>
             <p style="margin: 0 0 16px;">He passed away not long after, but the sorbetes he taught us to make became ours to carry forward. We still churn it his way: coconut milk, or “gata,” in place of dairy, fresh local fruit, and ice and salt instead of freezers — the old method that gives sorbetes its true texture and taste.</p>
             <p style="margin: 0;">What began as small batches sold to neighbors in Alae is now Nenecitas Sorbetes — still family-run, still made the same way, named after the woman who brought the recipe home.</p>
@@ -227,11 +270,11 @@
       <div style="max-width: 1240px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 50px;">
           <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">Parties &amp; events</div>
-          <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 52px; line-height: 1.08; margin: 0 0 14px; display: flex; align-items: center; justify-content: center; gap: 16px;"><img src="assets/cart-icon.png" alt="" style="height: 44px; width: auto;">Bring the sorbetes cart.</h2>
+          <h2 class="h2-52" style="font-family: var(--font-heading); font-weight: 600; font-size: 52px; line-height: 1.08; margin: 0 0 14px; display: flex; align-items: center; justify-content: center; gap: 16px;"><img src="assets/cart-icon.png" alt="" style="height: 44px; width: auto;">Bring the sorbetes cart.</h2>
           <p style="font-size: 16px; line-height: 1.7; margin: 0 auto; max-width: 54ch; color: var(--color-neutral-800);">Birthdays, weddings, school fairs, company parties. We arrive, we set up, we scoop until the last guest is happy.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 44px; align-items: stretch;">
+        <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 44px; align-items: stretch;">
           <div class="card" style="padding: 32px 30px 34px; display: flex; flex-direction: column; background: var(--color-bg);">
             <div style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: 16px;">Basic</div>
             <div style="font-family: var(--font-heading); font-size: 46px; font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 6px;">₱3,500</div>
@@ -275,7 +318,7 @@
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: start; border-top: 1px solid var(--color-divider); padding-top: 40px;">
+        <div class="addons-grid" style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: start; border-top: 1px solid var(--color-divider); padding-top: 40px;">
           <div>
             <h3 style="font-family: var(--font-heading); font-weight: 400; font-size: 32px; margin: 0 0 12px;">Add-ons</h3>
             <p style="font-size: 14.5px; line-height: 1.7; margin: 0; color: var(--color-neutral-700); text-align: justify;">Add any of these to any package when you book. Tell us at least a week ahead for customized flavors.</p>
@@ -319,9 +362,9 @@
       <div style="max-width: 1240px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 44px;">
           <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">Kind words</div>
-          <h2 style="font-family: var(--font-heading); font-weight: 400; font-size: 46px; line-height: 1.1; margin: 0;">What people tell us at the stall.</h2>
+          <h2 class="h2-46" style="font-family: var(--font-heading); font-weight: 400; font-size: 46px; line-height: 1.1; margin: 0;">What people tell us at the stall.</h2>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;">
+        <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;">
           <figure style="margin: 0; border-left: 2px solid #e0a12a; padding: 6px 0 6px 26px;">
             <blockquote style="margin: 0 0 18px; font-family: var(--font-heading); font-size: 23px; line-height: 1.45; font-style: italic;">“Mango and avocado together is the best seventy pesos in Centrio. We come back every weekend.”</blockquote>
             <figcaption style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700);">Marites L. · Cagayan de Oro</figcaption>
@@ -339,17 +382,17 @@
     </section>
 
     <section id="visit" style="padding: 84px 40px 88px; border-top: 1px solid var(--color-divider); background: #e8f6fb;">
-      <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center;">
+      <div class="two-col" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center;">
         <div>
           <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 16px;">Find us · Order</div>
-          <h2 style="font-family: var(--font-heading); font-weight: 400; font-size: 50px; line-height: 1.08; margin: 0 0 24px;">Find us around CDO, or send us a message.</h2>
+          <h2 class="h2-50" style="font-family: var(--font-heading); font-weight: 400; font-size: 50px; line-height: 1.08; margin: 0 0 24px;">Find us around CDO, or send us a message.</h2>
           <p style="font-size: 16px; line-height: 1.72; margin: 0 0 32px; max-width: 46ch; color: var(--color-neutral-800);">We're at four spots across Cagayan de Oro daily, plus our factory in Alae, Manolo Fortich. We deliver around both areas. For party bookings or reseller tubs, message us on Facebook or Instagram and we will reply the same day.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 38px;">
             <a href="https://www.facebook.com/TheFilipinoIceCream/" class="btn btn-primary">Message on Facebook</a>
             <a href="https://www.instagram.com/nenecitas.sorbetes/" class="btn btn-secondary">Follow on Instagram</a>
             <a href="tel:+639178590080" class="btn btn-ghost">Call · 0917 859 0080</a>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 24px 40px; padding-top: 28px; border-top: 1px solid var(--color-divider); justify-content: start;">
+          <div class="location-grid" style="display: grid; grid-template-columns: repeat(2, auto); gap: 24px 40px; padding-top: 28px; border-top: 1px solid var(--color-divider); justify-content: start;">
             <div>
               <div style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: 8px;">Centrio Mall</div>
               <div style="font-size: 15px; line-height: 1.5; position: relative">Near the entrance<br>Cagayan de Oro</div>
